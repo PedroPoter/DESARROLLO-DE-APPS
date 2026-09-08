@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlienDex - Registro de Criaturas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1> AlienDex</h1>
+        <p>Registro interactivo de criaturas extraterrestres</p>
+    </header>
+
+    <main>
+
+        <section id="registro">
+            <h2>Registrar criatura</h2>
+
+            <form id="alienForm">
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+
+                <label for="especie">Especie:</label>
+                <input type="text" id="especie" required>
+
+                <label for="planeta">Planeta:</label>
+                <input type="text" id="planeta" required>
+
+                <label for="peligro">Nivel de peligro:</label>
+                <select id="peligro">
+                    <option value="Bajo">Bajo</option>
+                    <option value="Medio">Medio</option>
+                    <option value="Alto">Alto</option>
+                    <option value="Extremo">Extremo</option>
+                </select>
+
+                <button type="submit">Registrar criatura</button>
+
+            </form>
+        </section>
+
+       <section id="catalogo">
+
+    <div class="catalogo-header">
+        <div>
+            <h2>Criaturas registradas</h2>
+            <p id="contador">Criaturas registradas: 0</p>
+        </div>
+
+        <input
+            type="text"
+            id="buscador"
+            placeholder="🔎 Buscar criatura..."
+        >
+    </div>
+
+    <div id="listaAliens"></div>
+
+</section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
