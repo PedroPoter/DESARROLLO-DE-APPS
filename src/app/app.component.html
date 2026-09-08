@@ -1,0 +1,75 @@
+<main class="page">
+  <section class="card">
+    <header class="header">
+      <span class="badge">Calculadora Angular</span>
+    </header>
+
+    <hr>
+
+    <section class="calculator">
+      <h2>Calculadora</h2>
+
+      <div class="form-grid">
+        <label>
+          <span>Número 1</span>
+          <input
+            type="number"
+            [(ngModel)]="num1"
+            placeholder="Ingresa el primer número">
+        </label>
+
+        <label>
+          <span>Operador</span>
+          <select [(ngModel)]="operador">
+            <option value="+">+</option>
+            <option value="-">−</option>
+            <option value="*">×</option>
+            <option value="/">÷</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Número 2</span>
+          <input
+            type="number"
+            [(ngModel)]="num2"
+            placeholder="Ingresa el segundo número">
+        </label>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="primary" (click)="operar()">Operar</button>
+        <button type="button" class="clear" (click)="limpiar()">Limpiar</button>
+      </div>
+
+      @if (mensajeError) {
+        <p class="error">{{ mensajeError }}</p>
+      }
+
+      <div class="result">
+        <span>Resultado</span>
+        <strong>{{ resultado }}</strong>
+      </div>
+    </section>
+
+    <section class="history">
+      <div class="section-title">
+        <h2>Historial</h2>
+        <span>{{ historial.length }} operación(es)</span>
+      </div>
+
+      @if (historial.length === 0) {
+        <p class="empty">Todavía no hay operaciones realizadas.</p>
+      } @else {
+        <div class="history-list">
+          @for (item of historial; track $index) {
+            <div class="history-item">
+              <span>{{ item.num1 }} {{ item.operador }} {{ item.num2 }}</span>
+              <strong>= {{ item.resultado }}</strong>
+            </div>
+          }
+        </div>
+      }
+    </section>
+  </section>
+</main>
