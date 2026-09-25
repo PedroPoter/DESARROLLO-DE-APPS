@@ -1,0 +1,7 @@
+{
+  "name": "HOLA",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
